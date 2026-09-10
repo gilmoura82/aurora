@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurora — Maquiagem Artística | Maria Eduarda Jesus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="sky"></div>
+<div class="stars" id="stars"></div>
+
+<nav>
+  <div class="logo"><em>Aurora</em> Maquiagem</div>
+  <div class="navlinks">
+    <a href="#portfolio">Trabalhos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#contato">Contato</a>
+  </div>
+  <a href="#agenda" class="navcta">Agendar horário</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div>
+      <span class="eyebrow">Maria Eduarda Jesus — maquiagem artística & personalizada</span>
+      <h1>Beleza que brilha como um céu de aurora.</h1>
+      <p class="lead">Peles preparadas, cores certeiras e um olhar autoral para cada rosto. Do dia a dia às noites inesquecíveis — cada make é feita sob medida para você.</p>
+      <div class="hero-ctas">
+        <a href="#agenda" class="btn-primary">Marcar meu horário</a>
+        <a href="#portfolio" class="btn-ghost">Ver trabalhos</a>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="cursor-glow" id="cursorGlow"></div>
+      <div class="stat-card">
+        <div class="num" id="statNum">4.9</div>
+        <div class="lab">média de avaliações das clientes</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="gallery-toolbar">
+      <div class="sec-head" style="margin-bottom:0;">
+        <span class="eyebrow">Portfólio</span>
+        <h2>Trabalhos feitos com carinho</h2>
+        <p>Uma vitrine viva do que já foi criado em cada cliente — peles, produções e estilos diferentes.</p>
+      </div>
+      <button class="pro-toggle" id="proToggleBtn">Área da profissional</button>
+    </div>
+
+    <div class="pro-panel" id="proPanel">
+      <p style="margin-top:0;color:var(--muted);font-size:0.9rem;">Digite a senha para adicionar novas fotos ao portfólio.</p>
+      <div class="row">
+        <input type="password" id="proPass" placeholder="Senha de acesso" style="max-width:220px;">
+        <button class="small-btn" id="proUnlock">Entrar</button>
+      </div>
+      <div id="proUpload" style="display:none;margin-top:18px;">
+        <div class="row">
+          <input type="text" id="capInput" placeholder="Legenda da foto (opcional)">
+          <input type="file" id="fileInput" accept="image/*">
+        </div>
+        <p style="font-size:0.78rem;color:var(--muted-2);margin-top:10px;">A foto fica visível para todas as pessoas que visitarem o site.</p>
+      </div>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid" style="margin-top:36px;">
+      <!-- preenchido via JS -->
+    </div>
+  </section>
+
+  <!-- TESTEMUNHOS -->
+  <section id="depoimentos">
+    <div class="sec-head">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem já sentiu a diferença</h2>
+      <p>Relatos reais de clientes — e você também pode deixar o seu depois do seu atendimento.</p>
+    </div>
+    <div class="test-scroll" id="testScroll"></div>
+
+    <div class="test-form">
+      <h3>Deixe seu depoimento</h3>
+      <p class="hint">Sua avaliação ajuda outras pessoas a conhecerem o trabalho.</p>
+      <div class="field">
+        <label for="tName">Seu nome</label>
+        <input type="text" id="tName" placeholder="Ex: Camila R.">
+      </div>
+      <div class="field">
+        <label>Nota</label>
+        <div class="star-pick" id="starPick">
+          <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="tText">Depoimento</label>
+        <textarea id="tText" rows="3" placeholder="Como foi sua experiência?"></textarea>
+      </div>
+      <button class="small-btn" id="tSubmit">Publicar depoimento</button>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda">
+    <div class="sec-head">
+      <span class="eyebrow">Agenda</span>
+      <h2>Escolha o melhor dia e horário</h2>
+      <p>Selecione a data, o horário disponível e confirme seus dados — simples assim.</p>
+    </div>
+
+    <div class="agenda-box">
+      <div class="days-col" id="daysCol"></div>
+      <div class="slots-col">
+        <h3 id="slotsTitle">Selecione uma data</h3>
+        <p class="sub" id="slotsSub">Os horários livres aparecem aqui.</p>
+        <div class="slots-grid" id="slotsGrid"></div>
+
+        <div class="book-form" id="bookForm">
+          <div class="field">
+            <label for="bName">Nome completo</label>
+            <input type="text" id="bName" placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="bPhone">WhatsApp</label>
+            <input type="text" id="bPhone" placeholder="(21) 90000-0000">
+          </div>
+          <button class="small-btn" id="bSubmit">Confirmar agendamento</button>
+        </div>
+        <div class="confirm-msg" id="confirmMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="eyebrow">Fale comigo</span>
+        <h3>Vamos combinar sua próxima make?</h3>
+        <p style="color:var(--muted);line-height:1.6;">Sou Maria Eduarda Jesus, maquiadora profissional. Atendo em domicílio e em estúdio. Casamentos, formaturas, ensaios e produções para o dia a dia.</p>
+        <div class="contact-links">
+          <a href="https://wa.me/5521970254758" target="_blank" rel="noopener">💬 WhatsApp — chamar agora</a>
+          <a href="https://instagram.com/duda.jesus.makeup" target="_blank" rel="noopener">📸 Instagram — @duda.jesus.makeup</a>
+          <a href="#agenda">🗓️ Ver horários disponíveis</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="eyebrow">Compartilhe</span>
+        <h3>Ajude a Aurora a chegar mais longe</h3>
+        <p style="color:var(--muted);line-height:1.6;">Gostou do trabalho? Compartilhe o site com quem também merece brilhar.</p>
+        <div class="row" style="margin-top:22px;">
+          <button class="small-btn secondary" id="shareBtn">Compartilhar site</button>
+          <button class="small-btn secondary" id="copyBtn">Copiar link</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note">
+    Este site é um ponto de partida pronto para publicar: basta trocar o nome da marca, fotos, textos e os links de WhatsApp/Instagram pelos reais. Depoimentos, portfólio e agenda já funcionam de verdade e ficam salvos automaticamente.
+  </div>
+
+  <footer>
+    <div class="logo"><em>Aurora</em> Maquiagem</div>
+    <div>Maria Eduarda Jesus — feito com carinho para transformar olhares.</div>
+  </footer>
+</div>
+
+<a class="wa-float" href="https://wa.me/5521970254758" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.39 1.26 4.81L2 22l5.42-1.42a9.87 9.87 0 0 0 4.62 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.78 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.66-.6-2.92-1.26-4.83-4.2-4.98-4.4-.15-.2-1.19-1.58-1.19-3.02 0-1.44.75-2.14 1.02-2.44.27-.29.6-.36.8-.36.2 0 .4 0 .58.01.19.01.44-.07.68.52.25.6.85 2.08.92 2.23.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.32.38-.45.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.08.13.08.7-.16 1.38Z"/></svg>
+</a>
+
+</body>
+</html>
